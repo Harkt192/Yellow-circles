@@ -1,16 +1,28 @@
 import random
 import sys
-from PyQt6 import uic
-from PyQt6.QtWidgets import QApplication, QMainWindow
+from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton
 from PyQt6.QtGui import QPainter, QColor
 
 
 class DrawYellowCircle(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('UI.ui', self)
+        self.initUI()
         self.flag = False
         self.pushButton.clicked.connect(self.draw)
+
+    def initUI(self):
+        self.setWindowTitle("Yellow Circle")
+        self.setGeometry(400, 100, 800, 900)
+        self.pushButton = QPushButton("Рисовать", self)
+        self.pushButton.move(300, 300)
+        self.pushButton.resize(200, 100)
+        self.pushButton.setStyleSheet("""
+        QPushButton {border-radius: 15px; background-color: #ff9700;}
+        QPushButton:hover {background-color: #ff7c00;}
+        QPushButton:pressed {background-color: red;}
+        """)
+
 
     def draw(self):
         self.size = random.randint(30, 100)
