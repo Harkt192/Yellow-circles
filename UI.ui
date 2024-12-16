@@ -24,8 +24,18 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QPushButton {border-radius: 15px; background-color: #ff8900}
-QPushButton:pressed {background-color: red}</string>
+     <string notr="true">QPushButton {
+	border-radius: 15px;
+	background-color: #ff9700;
+}
+
+QPushButton:hover {
+	background-color: #ff7c00;
+}
+
+QPushButton:pressed {
+	background-color: red;
+}</string>
     </property>
     <property name="text">
      <string>Рисовать</string>
